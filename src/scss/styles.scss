@@ -1,0 +1,2050 @@
+/* Подключение шрифтов */
+@font-face {
+  font-family: "ManropeBold";
+  src: url(../fonts/Manrope-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url(../fonts/Manrope-Regular.ttf);
+}
+
+@font-face {
+  font-family: "ManropeLight";
+  src: url(../fonts/Manrope-Light.ttf);
+}
+
+/* Сброс базовых стилей */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  outline: none;
+}
+
+/* Общие стили для всего приложения */
+body {
+  background: #040c18; /*взяли этот цвет в 1 и 2 лабах, так как он из фигмы*/
+  padding: 0 2rem;
+  overflow: auto;
+  font-family: "Manrope", sans-serif;
+  margin: 0 auto;
+}
+
+
+/* Убираем все прокрутки */
+body.no-scroll-completely {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+body.oh {
+  overflow: hidden;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+}
+
+a,
+button {
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+a:hover,
+button:hover {
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+button:hover {
+  background-color: #ae67fa;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 60px;
+  color: #ae67fa;
+  font-family: "ManropeBold", sans-serif;
+}
+
+h2 {
+  font-size: 34px;
+  font-family: "ManropeBold", sans-serif;
+}
+
+h1,
+h2 {
+  font-family: "ManropeBold", sans-serif;
+  background: linear-gradient(90deg, #ae67fa 1.84%, #f49867 102.67%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h3 {
+  font-family: "ManropeBold", sans-serif;
+  color: #fff;
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+}
+
+.btn {
+  display: flex;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 0.3125rem;
+  -webkit-border-radius: 0.3125rem;
+  -moz-border-radius: 0.3125rem;
+  -ms-border-radius: 0.3125rem;
+  -o-border-radius: 0.3125rem;
+  font-family: "Manrope", sans-serif;
+}
+
+.primary-btn {
+  background-color: #ff4820;
+}
+
+.section {
+  max-width: 73.0625rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.lined_header {
+  background: url("../assets/img/gradient_line.svg") no-repeat 0 0 transparent;
+  padding: 1rem 0;
+}
+
+/* Стили для Шапки */
+.header {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 0;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  /*в первой лабе шапка была открепленена, 
+  потому что было не понятно, должна ли она быть закрепленена.
+  В этой лабе решили тоже открепить. Если надо, то прикрепим обратно*/
+}
+
+.header .header__logo .logo__link {
+  display: flex;
+  align-items: center;
+}
+
+.header .header__menu .menu {
+  display: flex;
+  column-gap: 2rem;
+  font-family: "Manrope", sans-serif;
+}
+
+.header .header__right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 2rem;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.header .header__right.hidden {
+  opacity: 0;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  visibility: hidden;
+}
+
+.header .header__right .menu__close {
+  width: 38px;
+  height: 38px;
+}
+
+.header .header__right .menu__close.hidden {
+  display: none;
+}
+
+/*.header .header__menu .menu {
+  display: flex;
+  column-gap: 2rem;
+  font-family: "Manrope", sans-serif;
+}        */
+
+.header .header__menu .menu .menu__item a {
+  color: #fff;
+  border-bottom: 0.0625rem solid transparent;
+  font-family: "Manrope", sans-serif;
+}
+
+.header .header__menu .menu .menu__item:hover a {
+  border-bottom-color: #fff;
+}
+
+.header .header__menu .menu .menu__item.active a {
+  color: #f49867;
+  border-bottom-color: #f49867;
+}
+
+.header__burger_menu {
+  display: none; /* Скрыт по умолчанию на десктопе */
+  flex-direction: column;
+  row-gap: 0.5rem;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.header .header__burger_menu.hidden {
+  display: none;
+}
+
+.header .header__burger_menu .burger_menu__line,
+.header .header__right .menu__close .menu__line {
+  width: 43px;
+  height: 5px;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.header .header__right .menu__close .menu__line:nth-child(1) {
+  position: relative;
+  top: 15px;
+  right: 4px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+.header .header__right .menu__close .menu__line:nth-child(2) {
+  position: relative;
+  top: 10px;
+  right: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+.header .cta_buttons {
+  display: flex;
+  column-gap: 1rem;
+}
+
+/* Стили для первого экрана (Хиро секция) */
+.hero_section {
+  display: flex;
+  justify-content: space-between;
+  /*align-items: center; */
+  column-gap: 1rem;
+  /*min-height: 60vh;*/
+  margin: 4rem 0 8rem;
+}
+
+.hero_section .hero_section__left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 1rem;
+  width: 75%; /*60%*/
+  font-family: "ManropeBold", sans-serif;
+}
+
+.hero_section .hero_section__left .left__description {
+  color: #81afdd;
+  line-height: 1.5;
+  /*font-size: 20px;*/
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  font-family: "Manrope", sans-serif;
+}
+
+.hero_section .hero_section__left .left__cta_buttons {
+  display: flex;
+  width: 100%;
+}
+
+.hero_section .hero_section__left .left__cta_buttons input[type="text"] {
+  min-width: 28.5rem;
+  width: 70%;
+  padding: 0.5rem 2rem;
+  font-size: 20px;
+  border-radius: 0.25rem 0 0 0.25rem;
+  border: 0.0625rem solid #052d56;
+  background-color: #052d56;
+  font-family: "Manrope", sans-serif;
+}
+
+/* Стили для placeholder (подсказки) */
+.hero_section
+  .hero_section__left
+  .left__cta_buttons
+  input[type="text"]::placeholder {
+  color: #92aac1;
+  font-size: 20px;
+  font-family: "Manrope", sans-serif;
+}
+
+.hero_section .hero_section__left .left__cta_buttons .btn {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.hero_section .hero_section__left .left__social_approve {
+  /*добавили авторы и текст*/
+  display: flex;
+  margin-top: 1rem;
+  padding: 0;
+  color: #fff;
+  align-items: center;
+  font-family: "Manrope", sans-serif;
+}
+
+.hero_section .hero_section__left .left__social_approve span {
+  padding: 0 0 0 1.0625rem;
+  font-size: 0.75rem;
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+}
+
+.hero_section .hero_section__left .left__social_approve:empty {
+  display: none;
+}
+
+.hero_section .hero_section__right {
+  width: 100%;
+}
+
+.hero_section .hero_section__right img {
+  width: 100%;
+}
+
+/* Показываем бургер только на мобильных */
+@media screen and (max-width: 1440px) {
+  .header__burger_menu {
+    display: flex;
+  }
+
+  .header__burger_menu.hidden {
+    display: none;
+  }
+
+  .header__logo {
+    margin-right: auto;
+  }
+}
+
+/* Для очень маленьких экранов корректируем позицию */
+@media screen and (max-width: 425px) {
+  .header__burger_menu {
+    position: static;
+    transform: none;
+    margin-left: auto; /* Выравниваем по правому краю */
+  }
+
+  .header {
+    padding: 1rem 0;
+  }
+
+  .header__logo {
+    margin-right: auto;
+  }
+}
+
+/* Секция брендов */
+.brands_section {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 4rem 0;
+  column-gap: 3rem;
+}
+
+/* О GPT-4 */
+.what_is_chatgpt_section {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  margin: 6rem 0;
+  row-gap: 7rem;
+  background: url(../assets/img/what_is_gpt_3_bg.svg) no-repeat 0 0 / cover;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top {
+  display: flex;
+  column-gap: 3rem;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top .top__header {
+  flex: 30%;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top .top__content {
+  flex: 65%;
+  color: #81afdd;
+  font-size: 14px;
+  font-family: "Manrope", sans-serif;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle .middle__header {
+  width: 31.25rem;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle a {
+  color: #ff8a71;
+  font-size: 16px;
+  border-bottom: 0.0625rem solid transparent;
+  font-family: "Manrope", sans-serif;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle a:hover {
+  border-bottom: 0.0625rem solid #ff8a71;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  column-gap: 2rem;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.what_is_chatgpt_section
+  .what_is_chatgpt_section__bottom
+  .bottom__container
+  .container__content {
+  color: #81afdd;
+  font-size: 16px;
+  line-height: 1.8;
+  font-family: "Manrope", sans-serif;
+}
+
+/* Будущее здесь */
+.future_here {
+  display: flex;
+  column-gap: 6rem;
+  margin: 6rem 0 2rem;
+}
+
+.future_here .future_here__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 2rem;
+  flex: 2;
+  margin-top: -1rem;
+}
+
+.future_here .future_here__left .left__cta {
+  color: #f49867;
+  border-bottom: 0.0625rem solid transparent;
+  font-family: "Manrope", sans-serif;
+}
+
+.future_here .future_here__left a:hover {
+  border-bottom: 0.0625rem solid #f49867;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.future_here .future_here__right {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+.future_here .future_here__right .right__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.future_here .future_here__right .right__container .container__header {
+  width: 35%;
+  font-size: 18px;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.future_here .future_here__right .right__container .container__content {
+  width: 55%;
+  color: #81afdd;
+  font-family: "Manrope", sans-serif;
+}
+
+@media screen and (max-width: 1024px) {
+  .page {
+    align-content: center;
+  }
+
+
+  /* Убираем все прокрутки */
+  body.no-scroll-completely {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  }
+
+  .header {
+    padding: 2rem;
+  }
+
+  .header .header__logo .logo__link img {
+    width: 200%;
+  }
+
+  .header .header__right {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    row-gap: 53px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    background: #031b34;
+  }
+
+  .header .header__menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .header .header__menu .menu {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+  }
+
+  .header .header__menu .menu__close {
+    position: absolute;
+    right: -100px;
+    top: -100px;
+  }
+
+  .header .header__menu .menu .menu__item a {
+    font-size: 48px;
+  }
+
+  .hero_section {
+    flex-direction: column;
+    justify-content: center;
+    column-gap: 0;
+    /* margin: 0; */
+    width: 90%;
+  }
+
+  .hero_section .hero_section__left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero_section .hero_section__right {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero_section .hero_section__right img {
+    width: 60%;
+  }
+
+  .hero_section .hero_section__left .left__cta_buttons {
+    justify-content: center;
+  }
+
+  .what_is_chatgpt_section {
+    row-gap: 4rem;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__middle {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container {
+    row-gap: 0;
+  }
+
+  .future_here {
+    column-gap: 0;
+    flex-direction: column;
+    row-gap: 4rem;
+  }
+
+  .future_here .future_here__left {
+    row-gap: 1rem;
+  }
+}
+
+/* Адаптация для блока с аватарами и текстом */
+@media screen and (max-width: 1024px) {
+  .hero_section .hero_section__left .left__social_approve {
+    justify-content: center;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .hero_section .hero_section__left .left__social_approve img {
+    width: 180px;
+  }
+
+  .hero_section .hero_section__left .left__social_approve span {
+    font-size: 14px;
+    padding: 0 0 0 0.8rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero_section .hero_section__left .left__social_approve {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+  }
+
+  /* Убираем все прокрутки */
+  body.no-scroll-completely {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  }
+
+  .hero_section .hero_section__left .left__social_approve img {
+    width: 160px;
+  }
+
+  .hero_section .hero_section__left .left__social_approve span {
+    font-size: 13px;
+    padding: 0;
+    text-align: center;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .hero_section .hero_section__left .left__social_approve img {
+    width: 140px;
+  }
+
+  /* Убираем все прокрутки */
+  body.no-scroll-completely {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  }
+
+  .hero_section .hero_section__left .left__social_approve span {
+    font-size: 12px;
+    max-width: 250px;
+    line-height: 1.4;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header .header__menu .menu__close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header .header__menu .menu__close {
+    top: 15px;
+    right: 15px;
+  }
+
+  .header .header__menu .menu__close .menu__line {
+    width: 30px;
+    height: 4px;
+  }
+
+  .header .header__menu .menu__close .menu__line:nth-child(1) {
+    top: 12px;
+    right: 3px;
+  }
+
+  .header .header__menu .menu__close .menu__line:nth-child(2) {
+    top: 8px;
+    right: 2px;
+  }
+}
+/*----------------------*/
+
+@media screen and (max-width: 1024px) { /*766 - было у вас, решили исправить на 1024*/
+  p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  h1 {
+    font-size: 46px;
+  }
+
+  h2 {
+    font-size: 27px;
+  }
+
+  h3 {
+    font-size: 19px;
+  }
+
+  .hero_section {
+    width: 100%;
+  }
+
+  .brands_section {
+    margin-top: -15px;
+    padding-bottom: 0;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__top {
+    flex-direction: column;
+  }
+
+  .hero_section .hero_section__right img {
+    width: 85%;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__middle .middle__header {
+    width: auto;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+    flex-direction: column;
+  }
+
+  .what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+    row-gap: 2rem;
+  }
+
+  .what_is_chatgpt_section {
+    row-gap: 3rem;
+  }
+
+  .what_is_chatgpt_section {
+    margin: 6rem 0 0;
+  }
+
+  .what_is_chatgpt_section
+    .what_is_chatgpt_section__bottom
+    .bottom__container
+    .container__content {
+    line-height: 1.5;
+  }
+}
+
+@media screen and (max-width: 767px) { /*765 - было у вас, решили исправить на 767 (для 768)*/
+  a {
+    font-size: 12px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+
+  .hero_section .hero_section__left .left__cta_buttons input[type="text"] {
+    min-width: auto;
+  }
+
+  .future_here {
+    row-gap: 3rem;
+  }
+
+  .future_here .future_here__right .right__container {
+    flex-direction: column;
+  }
+
+  .future_here .future_here__right .right__container .container__header {
+    width: 100%;
+  }
+
+  .future_here .future_here__right .right__container .container__content {
+    width: 100%;
+  }
+
+  .future_here .future_here__right {
+    row-gap: 2rem;
+  }
+}
+/*--------------------------------*/
+
+.jenshina {
+  display: flex;
+  column-gap: 6rem;
+  margin: 6rem 0 2rem;
+  padding-bottom: 4rem;
+}
+
+.jenshina .jenshina__left {
+  height: 100%;
+  width: 60%;
+}
+
+.jenshina .jenshina__left img {
+  width: 100%;
+}
+
+.jenshina .jenshina__right {
+  height: 100%;
+  width: 40%;
+  margin-top: 20rem;
+  margin-left: -8%;
+}
+
+.jenshina .jenshina__right .ranniy_dostyp {
+  color: #81afdd;
+  margin-bottom: 2rem;
+  font-family: "Manrope", sans-serif;
+}
+
+/*.jenshina .jenshina__right .demo_title{
+  height: 10%;
+  line-height: 1,5;
+  margin-bottom: 2rem;
+  font-family: "ManropeBold", sans-serif; 
+}/*/
+
+.jenshina .jenshina__right .bed_text {
+  color: #81afdd;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  line-height: 2;
+  font-family: "Manrope", sans-serif;
+}
+
+.jenshina .jenshina__right .zapros_ranniy_dostyp {
+  color: #ff8a71;
+  border-bottom: 0.0625rem solid transparent;
+  font-family: "Manrope", sans-serif;
+}
+
+@media screen and (max-width: 1024px) {
+  .jenshina {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1rem; /* Меньшие отступы */
+    padding-right: 1rem; /* Меньшие отступы */
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .jenshina .jenshina__left {
+    margin-bottom: 2rem;
+    width: 80%;
+  }
+
+  .jenshina .jenshina__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    padding: 0 0.5rem; /* Минимальные отступы для текста */
+    box-sizing: border-box;
+  }
+}
+
+/* Вставка регистрации с кнопкой начать */
+.banner {
+  /* width: 73rem;
+  height: 10.8rem;*/
+  width: 100%;
+  max-height: 172.65px;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 0.7rem;
+  border: 0.0625rem solid #000;
+  background: linear-gradient(90deg, #ae67fa 1.84%, #f49867 102.67%);
+  box-shadow: 0rem 0.25rem 0.25rem 0rem rgba(0, 0, 0, 0.25);
+  transition: max-width 0.3s ease-in-out;
+}
+
+.banner .banner_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.75rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.banner .banner_left {
+  flex: 1;
+}
+
+.banner .btn_cont {
+  flex: 0;
+}
+
+/*.banner .banner_content .banner_left{
+  margin-top: 2rem;
+  margin-left: 2.8rem;
+}*/
+
+.banner .banner_title {
+  background: #0e0e0e;
+  background-clip: text;
+  /*-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;*/
+  font-size: 1rem !important;
+  font-family: "Manrope", sans-serif;
+  margin: 0;
+}
+
+.banner .banner_osnovn_text {
+  color: #000;
+  font-family: "ManropeBold", sans-serif;
+  font-size: 2rem !important;
+  font-style: normal;
+  font-weight: bold; /*800*/
+  line-height: 2.5rem;
+}
+
+/*.banner  .btn_cont{/*.banner_content*/
+/*margin-top: 3.5rem;
+  margin-right: 1.7rem;
+}*/
+
+.banner .button_banner {
+  background-color: #000;
+  color: #fff;
+  width: 11.875rem;
+  height: 3.75rem;
+  border-radius: 2.5rem;
+  font-size: 18px;
+  border: #000;
+  font-family: "Manrope", sans-serif;
+}
+.banner .button_banner:hover {
+  background-color: #ae67fa;
+}
+
+@media screen and (max-width: 1024px) { 
+  .banner {
+    max-width: 1000px;
+    max-height: 100%;
+  }
+}
+
+@media screen and (max-width: 880px) { /*не получилось оптимально подогнать под 768, решили взять 880*/
+  .banner {
+    max-width: 700px;
+    max-height: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) { /*не получилось оптимально подогнать под 768, решили взять 600*/
+  .banner {
+    max-width: 500px;
+    max-height: 100%;
+  }
+
+  .banner .banner_content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .banner .banner_left {
+    text-align: center;
+  }
+
+  .banner .btn_cont {
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .banner .button_banner {
+    width: auto;
+    padding: 1rem 2rem;
+  }
+}
+
+/*------------------------------/* 
+
+/* Блог + 5 картинок */
+.blog .header_blog {
+  font-size: 62px;
+  width: 64%;
+  padding: 8rem 0rem 6rem 0rem;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.blog .container_for_block {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 7rem;
+}
+
+.blog .container_for_block .large_block {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog .container_for_block .large_block .large_img {
+  width: 100%;
+  object-fit: cover;
+  width: 26.0644rem; 
+  height: 17.9588rem;
+  clip-path: polygon(1.5625rem 0, 100% 0, 100% 100%, 0 100%, 0 1.5625rem);
+}
+
+.blog .container_for_block .large_block .blok_large {
+  background-color: #042c54;
+  width: 100%;
+  color: white;
+  width: 26.0644rem; 
+  height: 25.4194rem;
+}
+
+.blog .container_for_block .large_block .blok_large .data_big {
+  font-size: 11.65px;
+  margin-bottom: 0.5rem;
+  color: #adaaaa;
+  padding: 2.5rem 0 0 1.4rem;
+  font-family: "Manrope", sans-serif;
+}
+
+.blog .container_for_block .large_block .blok_large .text_big {
+  font-size: 25.11px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding: 0 7rem 11rem 1.4rem;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.blog .container_for_block .large_block .blok_large .ssylka_eto_futare,
+.blog .small_blocks .text_and_img_small .blok_small .ssylka_eto_futare {
+  font-size: 12px;
+  padding: 0 0 10rem 1.4rem;
+  color: #adaaaa;
+  font-family: "Manrope", sans-serif;
+}
+
+.blog .small_blocks {
+  display: grid;
+  grid-template-columns: repeat(2, 20.4588rem);
+  grid-gap: 3rem;
+}
+
+.blog .small_blocks .text_and_img_small {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog .small_blocks .text_and_img_small .photo {
+  object-fit: cover;
+  width: 20.4588rem;
+  height: 8.1544rem;
+  clip-path: polygon(1.5625rem 0, 100% 0, 100% 100%, 0 100%, 0 1.5625rem);
+}
+
+.blog .small_blocks .text_and_img_small .blok_small {
+  background-color: #042c54;
+  padding: 0;
+  color: white;
+  width: 20.4588rem;
+  height: 12.0856rem;
+}
+
+.blog .small_blocks .text_and_img_small .blok_small .data_small {
+  padding: 1rem 0 0 1.4rem;
+  font-size: 12px;
+  color: #adaaaa;
+  margin-bottom: 0.5rem;
+  font-family: "Manrope", sans-serif;
+}
+
+.blog .small_blocks .text_and_img_small .blok_small .text_small {
+  font-size: 19px;
+  font-weight: bold;
+  padding: 0rem 2rem 2.1rem 1.4rem;
+  font-family: "ManropeBold", sans-serif;
+}
+
+@media screen and (max-width: 1024px) {
+  .blog .header_blog {
+    font-size: 48px;
+    width: 100%;
+    text-align: center;
+    padding: 5rem 1rem;
+  }
+
+  .blog .container_for_block {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
+    gap: 2rem;
+  }
+
+  /* Большой блок сделали на всю ширину */
+  .blog .container_for_block .large_block {
+    width: 100%;
+    max-width: none;
+  }
+
+  .blog .container_for_block .large_block .large_img {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+  }
+
+  .blog .container_for_block .large_block .blok_large {
+    width: 100%;
+    height: auto;
+    min-height: 15rem;
+    position: relative;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog .container_for_block .large_block .blok_large .data_big {
+    padding: 1.5rem 0 0.5rem 1.4rem;
+    margin: 0;
+  }
+
+  .blog .container_for_block .large_block .blok_large .text_big {
+    padding: 0 2rem 1rem 1.4rem;
+    font-size: 28px;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  .blog .container_for_block .large_block .blok_large .ssylka_eto_futare {
+    padding: 0 0 0 1.4rem !important;
+    margin: 0;
+    align-self: flex-start;
+  }
+
+  /* Малые блоки делаем в 2 колонки по 2 */
+  .blog .small_blocks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .blog .small_blocks .text_and_img_small {
+    width: 100%;
+  }
+
+  .blog .small_blocks .text_and_img_small .photo {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+  }
+
+  .blog .small_blocks .text_and_img_small .blok_small {
+    width: 100%;
+    height: auto;
+    min-height: 12rem;
+    position: relative;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog .small_blocks .text_and_img_small .blok_small .data_small {
+    padding: 1rem 0 0.5rem 1.4rem;
+    margin: 0;
+  }
+
+  .blog .small_blocks .text_and_img_small .blok_small .text_small {
+    padding: 0 1rem 0.5rem 1.4rem;
+    font-size: 18px;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  .blog .small_blocks .text_and_img_small .blok_small .ssylka_eto_futare {
+    padding: 0 0 0 1.4rem !important;
+    margin: 0;
+  }
+}
+
+@media (min-width: 427px) and (max-width: 768px) {
+  .blog .small_blocks .text_and_img_small .blok_small .data_small {
+    padding: 1rem 0rem 0rem 1rem;
+  }
+
+  .blog .small_blocks .text_and_img_small .blok_small .text_small {
+    font-size: 17px;
+    padding: 0 3rem 3rem 1rem;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .blog .header_blog {
+    font-size: 35px;
+    padding: 3rem 0.5rem;
+  }
+  
+  .blog .container_for_block {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0.5rem !important;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  
+  .blog .container_for_block .large_block {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .blog .container_for_block .large_block .large_img {
+    width: 100%;
+    height: 15rem;
+  }
+
+  .blog .container_for_block .large_block .blok_large {
+    width: 100%;
+    height: auto;
+    min-height: 12rem;
+  }
+
+  .blog .container_for_block .large_block .blok_large .text_big {
+    font-size: 19px;
+    padding: 0 0.5rem 1rem 1rem;
+  }
+
+  .blog .container_for_block .large_block .blok_large .data_big {
+    padding: 1.5rem 0 0.5rem 1rem;
+  }
+
+  .blog .container_for_block .large_block .blok_large .ssylka_eto_futare {
+    padding: 0 0 0 1rem !important;
+  }
+
+  .blog .small_blocks {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .blog .small_blocks .text_and_img_small {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .blog .small_blocks .text_and_img_small .photo {
+    width: 100% !important;
+    height: 10rem !important;
+  }
+  
+  .blog .small_blocks .text_and_img_small .blok_small {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 10rem !important;
+  }
+  
+  .blog .small_blocks .text_and_img_small .blok_small .text_small {
+    font-size: 16px !important;
+    padding: 0 0.5rem 1rem 1rem !important;
+  }
+  
+  .blog .small_blocks .text_and_img_small .blok_small .data_small {
+    padding: 1rem 0 0.5rem 1rem !important;
+  }
+  
+  .blog .small_blocks .text_and_img_small .blok_small .ssylka_eto_futare {
+    padding: 0 0 0 1rem !important;
+  }
+}
+/*--------------------------------*/
+
+/* Шаг в будущее*/
+section.shag_in_future {
+  /*Добавлено уточнение к чему именно применяются стили*/
+  display: flex;
+  width: 100%; /* убрана горизонтальная прокрутка */
+  height: 950px;
+  background-color: #031b34;
+  margin-top: 100px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 5% 0;
+  box-sizing: border-box;
+}
+
+.shag_in_future .shag_in_future_header {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shag_in_future .header_text_box {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: auto;
+  max-width: 821px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5%;
+  margin-bottom: 5%;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.shag_in_future .btn_last {
+  display: flex;
+  width: 21.09875rem;
+  height: 4.0625rem;
+  padding: 1rem 2rem;
+  background-color: #031b34;
+  color: #adaaaa;
+  border: none;
+  font-size: 18px;
+  border-radius: 0;
+  border: 1px solid #adaaaa;
+  margin-top: 5%;
+  margin-bottom: 40%;
+  font-family: "Manrope", sans-serif;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.shag_in_future .btn_box {
+  margin-top: -5%;
+}
+
+.shag_in_future .gpt_box {
+  display: flex;
+  justify-content: space-around; /* делаем равное расстояние вокруг колонок */
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 5%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.shag_in_future .links {
+  margin: 0 auto;
+  padding-left: 5%;
+}
+
+.shag_in_future .company,
+.shag_in_future .get_in_touch {
+  margin-left: auto;
+}
+
+.shag_in_future .contakt_info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.shag_in_future .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.shag_in_future .gpt_icon {
+  margin-bottom: 10px;
+  width: 7.375rem;
+  height: 1.875rem;
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.shag_in_future .shtyki_ssilok,
+.shag_in_future .contaktiki,
+.shag_in_future .adress {
+  font-family: "Manrope", sans-serif;
+  color: #ffffff;
+  text-align: left;
+}
+
+.shag_in_future .shtyki_ssilok {
+  font-size: 14px;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.shag_in_future .contaktiki {
+  font-size: 12px;
+  margin-top: 25px;
+  color: #adaaaa;
+  font-family: "Manrope", sans-serif;
+  text-align: left;
+}
+
+.shag_in_future .contakt_info .contaktiki .item__link {
+  margin-top: 105px;
+  color: #adaaaa;
+  font-family: "Manrope", sans-serif;
+}
+
+.shag_in_future .contakt_info .contaktiki .item__link {
+  margin-top: 105px;
+  margin-top: 40px;
+  color: #adaaaa;
+  font-family: "Manrope", sans-serif;
+}
+
+.shag_in_future .adress {
+  font-size: 12px;
+  color: #adaaaa;
+  margin-top: 25px;
+  font-family: "Manrope", sans-serif;
+}
+
+.rights_reserved {
+  display: flex;
+  width: 100%;
+  height: 10px;
+  background-color: #031b34;
+  justify-content: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.rights_reserved .rights_reserved_text {
+  font-family: "ManropeLight", sans-serif;
+  color: #adaaaa;
+  background-color: #040c18;
+  font-size: 15px;
+  width: 100vw;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .shag_in_future .gpt_box {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  /* Убираем лишние отступы между заголовком и кнопкой */
+  .shag_in_future .header_text_box {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 0 2rem !important;
+    margin: 0 auto 2rem auto !important;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .shag_in_future .header_text_box h1 {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  /* Убираем лишние отступы у кнопки */
+  .shag_in_future .btn_box {
+    margin-top: 0;
+  }
+
+  .shag_in_future .btn_last {
+    margin-top: 2%;
+    margin-bottom: 5%;
+  }
+
+  /* Меняем фиксированную высоту */
+  section.shag_in_future {
+    height: auto;
+    min-height: auto;
+    padding-bottom: 2%;
+  }
+
+  /* Также уменьшаем отступы в gpt_box */
+  .shag_in_future .gpt_box {
+    gap: 1%;
+    margin-top: 3%;
+  }
+}
+
+.shag_in_future .shag_in_future_header {
+  width: 100%;
+}
+
+.shag_in_future .gpt_box {
+  gap: 2%;
+}
+
+@media screen and (max-width: 768px) {
+  section.shag_in_future {
+    padding: 5% 2rem !important;
+    height: auto !important;
+  }
+
+  .shag_in_future .gpt_box {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 1rem !important;
+    margin: 0 auto !important;
+    justify-content: center !important;
+  }
+
+  .shag_in_future .links,
+  .shag_in_future .company,
+  .shag_in_future .get_in_touch {
+    padding-left: 0 !important;
+    margin: 0 !important;
+    text-align: left !important;
+  }
+
+  .shag_in_future .logo,
+  .shag_in_future .links,
+  .shag_in_future .company,
+  .shag_in_future .get_in_touch {
+    min-width: auto !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  /* Центрируем заголовок и кнопку */
+  .shag_in_future .header_text_box {
+    margin-bottom: 3rem !important;
+    padding: 0 1rem !important;
+  }
+
+  .shag_in_future .btn_box {
+    margin-top: 1rem !important;
+    margin-bottom: 3rem !important;
+  }
+
+  .shag_in_future .btn_last {
+    margin: 0 auto !important;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  section.shag_in_future {
+    padding: 5% 1rem !important;
+    height: auto !important;
+  }
+
+  .shag_in_future .gpt_box {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-rows: auto auto !important; 
+    gap: 2rem !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Логотип и адрес - первая строка, первый столбец */
+  .shag_in_future .logo {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Ссылки - первая строка, второй столбец */
+  .shag_in_future .links {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+
+  /* Компания - вторая строка, первый столбец */
+  .shag_in_future .company {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+    margin-top: 0 !important;
+  }
+
+  /* Контакты - вторая строка, второй столбец */
+  .shag_in_future .get_in_touch {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    text-align: left !important;
+    align-items: flex-start !important;
+    margin-top: 0 !important;
+  }
+
+  .shag_in_future .header_text_box {
+    margin-bottom: 1rem !important; 
+    padding: 0 0.5rem !important;
+  }
+
+  .shag_in_future .header_text_box h1 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+
+  .shag_in_future .btn_last {
+    font-size: 14px !important;
+    padding: 0.8rem 2rem !important;
+    width: auto !important;
+    max-width: 200px !important;
+  }
+
+  .rights_reserved .rights_reserved_text {
+    font-size: 8px !important;
+    padding: 5px 0 !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .shag_in_future .gpt_box {
+    padding: 0 2rem !important;
+    justify-content: space-around !important;
+  }
+  
+  .shag_in_future .links {
+    padding-left: 0 !important;
+  }
+}
+
+/* Дополнительная адаптация: для очень маленьких экранов решили увеличить кнопку */
+@media screen and (max-width: 480px) {
+  .shag_in_future .gpt_box {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 30px !important;
+  }
+
+  .shag_in_future .header_text_box h1 {
+    font-size: 28px !important;
+  }
+
+  .shag_in_future .btn_last {
+    font-size: 14px !important;
+    padding: 0.8rem 1rem !important;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  html {
+    font-size: 18px;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  /* Убираем все прокрутки */
+  body.no-scroll-completely {
+  overflow: hidden !important;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  }
+
+  h1 {
+    font-size: 5rem !important;
+  }
+
+  h2 {
+    font-size: 3.5rem !important;
+  }
+
+  h3 {
+    font-size: 2.25rem !important;
+  }
+
+  p,
+  a {
+    font-size: 1.5rem !important;
+  }
+
+  .btn {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
+
+  .header {
+    padding: 2rem 0;
+  }
+
+  .header .header__menu .menu {
+    column-gap: 2rem;
+  }
+
+  .header .header__logo .logo__link img {
+    width: 200%;
+  }
+  
+  .section {
+    max-width: 90%;
+  }
+
+  .hero_section__right {
+    max-width: 70dvh;
+  }
+
+  .hero_section .hero_section__left .left__social_approve span {
+    font-size: 1.125rem;
+  }
+
+  .top__content,
+  .middle_cta,
+  .what_is_chatgpt_section__bottom .container__content,
+  .left__cta {
+    font-size: 1.75rem !important;
+  }
+
+  .jenshina__right {
+    margin-top: 40rem !important;
+  }
+
+  .banner {
+    max-height: 100%;
+  }
+
+  .blog .header_blog {
+    font-size: 4.5rem;
+    width: 100%;
+    padding: 6rem 0 4rem 0;
+  }
+  
+  .blog .container_for_block {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    max-width: 100%;
+    width: 100%;
+    align-items: start; /* Добавили для выравнивания */
+  }
+  
+  .blog .container_for_block .large_block {
+    width: 100%;
+    height: 100%; /* fit-content*/ /*Занимаем всю высоту */
+  }
+  
+  .blog .container_for_block .large_block .large_img {
+    width: 100%;
+    height: calc(58rem + 2rem); 
+    object-fit: cover;
+  }
+  
+  .blog .container_for_block .large_block .blok_large {
+    width: 100%;
+    height: auto;
+    min-height: 18rem;
+    padding: 1.5rem;
+    position: relative;
+  }
+  
+  .blog .container_for_block .large_block .blok_large .data_big {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    padding: 0;
+  }
+  
+  .blog .container_for_block .large_block .blok_large .text_big {
+    font-size: 1.6rem;
+    padding: 0 0 2rem 0;
+    line-height: 1.3;
+  }
+  
+  .blog .container_for_block .large_block .blok_large .ssylka_eto_futare {
+    font-size: 0.85rem;
+    padding: 0;
+    position: absolute;
+    bottom: 1.5rem;
+  }
+  
+  .blog .small_blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    grid-column: 2;
+    height: 100%; /* Занимаем всю высоту */
+  }
+  
+  .blog .small_blocks .text_and_img_small {
+    width: 100%;
+  }
+  
+  .blog .small_blocks .text_and_img_small .photo {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+  }
+  
+  .blog .small_blocks .text_and_img_small .blok_small {
+    width: 100%;
+    height: auto;
+    min-height: 18rem;
+    padding: 1.5rem;
+    position: relative;
+  }
+  
+  .blog .small_blocks .text_and_img_small .blok_small .data_small {
+    font-size: 0.9rem;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .blog .small_blocks .text_and_img_small .blok_small .text_small {
+    font-size: 1.6rem;
+    padding: 0 0 2rem 0;
+    line-height: 1.3;
+  }
+  
+  .blog .small_blocks .text_and_img_small .blok_small .ssylka_eto_futare {
+    font-size: 0.85rem;
+    padding: 0;
+    position: absolute;
+    bottom: 1.5rem;
+  }
+
+  .btn_box {
+    margin-top: 0 !important;
+  }
+
+  .button_banner {
+    font-size: 1.75rem !important;
+    width: 20rem !important;
+    height: 5rem !important;
+  }
+    
+  .brands_section img {
+    width: 180px; 
+    height: auto;
+    margin: 1rem; 
+  }
+    
+  .hero_section .hero_section__right img {
+    max-width: 80%; 
+    width: 80%;
+  }
+
+  .jenshina .jenshina__left img {
+    width: 90%; /* уменьшаем ширину */
+    max-width: 90%;
+  }
+    
+  .rights_reserved .rights_reserved_text {
+    font-size: 1.2rem; 
+  }
+
+  .header .header__logo .logo__link img {
+    width: 250px !important; 
+    height: auto;
+  }
+
+  .shag_in_future .btn_last {
+    width: 25rem;
+    height: 5rem;
+    font-size: 1.5rem;
+    padding: 1.5rem 3rem;
+  }
+  
+  section.shag_in_future {
+    height: 1200px;
+    padding: 5% 2rem;
+  }
+
+  .shag_in_future .gpt_box {
+    max-width: 100% !important;
+    width: 100%;
+    display: flex;
+    justify-content: space-around; /* делаем равные отступы вокруг всех колонок */
+    padding: 0 4rem; /* делаем симметричные отступы по бокам */
+    gap: 3rem; /* образуем расстояние между колонками */
+  }
+
+  .shag_in_future .gpt_box .logo,
+  .shag_in_future .gpt_box .links,
+  .shag_in_future .gpt_box .company,
+  .shag_in_future .gpt_box .get_in_touch {
+    flex: 0 1 auto;
+    width: auto;
+    min-width: 200px;
+    margin: 0;
+  }
+
+  .shag_in_future .logo {
+    align-items: flex-start;
+  }
+
+  .shag_in_future .shtyki_ssilok,
+  .shag_in_future .contaktiki,
+  .shag_in_future .adress {
+    text-align: left;
+    width: 100%;
+  }
+
+  /* Сохраняем отступы от заголовка */
+  .shag_in_future .header_text_box {
+    margin-bottom: 10rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .hero_section .hero_section__left .left__cta_buttons input[type="text"] {
+    min-width: 35rem;
+    padding: 1rem 2rem;
+    font-size: 32px;
+  }
+  
+  .hero_section .hero_section__left .left__cta_buttons input[type="text"]::placeholder {
+    font-size: 32px;
+  }
+  
+  .hero_section .hero_section__left .left__cta_buttons .btn {
+    padding: 1rem 3rem;
+    font-size: 32px;
+  }
+}
+
+/* Адаптация для экранов 1440px */
+@media screen and (min-width: 1441px) and (max-width: 2055px) {
+  body {
+    padding: 0 4rem;
+  }
+  
+  .section {
+    max-width: 85rem;
+  }
+  
+  .header {
+    padding: 2rem 0;
+  }
+  
+  .hero_section {
+    margin: 4rem 0 8rem;
+  }
+  
+  /* Убедитесь, что контент не прижимается к краям */
+  .what_is_chatgpt_section,
+  .future_here,
+  .jenshina,
+  .blog {
+    padding: 0 1rem;
+  }
+  
+  .banner {
+    max-width: 90%;
+  }
+}
+
+
+
