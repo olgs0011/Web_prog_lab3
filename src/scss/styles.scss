@@ -141,7 +141,7 @@ p {
 }
 
 .section {
-  max-width: 73.0625rem;
+  max-width: 90%;
   width: 100%;
   margin: 0 auto;
 }
@@ -399,6 +399,11 @@ p {
   .header__logo {
     margin-right: auto;
   }
+
+    .section {
+      max-width: 100%;
+      width: 100%;
+    }
 }
 
 /* Секция брендов */
@@ -547,6 +552,10 @@ p {
     align-content: center;
   }
 
+    .section {
+      max-width: 100%;
+      width: 100%;
+  }
 
   /* Убираем все прокрутки */
   body.no-scroll-completely {
@@ -671,6 +680,12 @@ p {
 }
 
 @media screen and (max-width: 768px) {
+
+    .section {
+      max-width: 100%;
+      width: 100%;
+    }
+    
   .hero_section .hero_section__left .left__social_approve {
     flex-direction: column;
     align-items: center;
@@ -1182,6 +1197,7 @@ p {
   .blog .container_for_block .large_block {
     width: 100%;
     max-width: none;
+    height: 100%; /*Занимаем всю высоту */
   }
 
   .blog .container_for_block .large_block .large_img {
@@ -1745,10 +1761,9 @@ section.shag_in_future {
   }
 
   body {
-    padding: 0 6rem;
+    padding: 0 2rem;
   }
 
-  /* Убираем все прокрутки */
   body.no-scroll-completely {
   overflow: hidden !important;
   position: fixed;
@@ -1779,7 +1794,7 @@ section.shag_in_future {
   }
 
   .header {
-    padding: 2rem 6rem;
+    padding: 2rem 0rem;
   }
 
   .header .header__menu .menu {
@@ -1827,7 +1842,7 @@ section.shag_in_future {
   .blog .container_for_block {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 2rem;
+    gap: 0;
     max-width: 100%;
     width: 100%;
     align-items: start; /* Добавили для выравнивания */
@@ -1835,7 +1850,7 @@ section.shag_in_future {
   
   .blog .container_for_block .large_block {
     width: 100%;
-    height: 100%; /* fit-content*/ /*Занимаем всю высоту */
+    height: 100%; /*Занимаем всю высоту */
   }
   
   .blog .container_for_block .large_block .large_img {
@@ -1873,7 +1888,6 @@ section.shag_in_future {
   
   .blog .small_blocks {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 2rem;
     grid-column: 2;
     height: 100%; /* Занимаем всю высоту */
@@ -1933,8 +1947,8 @@ section.shag_in_future {
   }
     
   .hero_section .hero_section__right img {
-    max-width: 80%; 
-    width: 80%;
+    max-width: 100%; 
+    width: 100%;
   }
 
   .jenshina .jenshina__left img {
@@ -1956,6 +1970,15 @@ section.shag_in_future {
     height: 5rem;
     font-size: 1.5rem;
     padding: 1.5rem 3rem;
+  }
+
+    .section {
+        max-width: 100%;
+        width: 100%;
+    }
+
+  .hero_section .hero_section__left{
+    max-width: 50%;
   }
   
   section.shag_in_future {
@@ -2016,14 +2039,17 @@ section.shag_in_future {
   }
 }
 
-/* Адаптация для экранов 1440px */
+/* Адап 1440px */
+@media screen and (min-width: 1440px) {
+  .section{
+    max-width: 100%;
+  }
+}
+
+/* Адап для 1440px */
 @media screen and (min-width: 1441px) and (max-width: 2055px) {
   body {
     padding: 0 4rem;
-  }
-  
-  .section {
-    max-width: 85rem;
   }
   
   .header {
@@ -2034,7 +2060,7 @@ section.shag_in_future {
     margin: 4rem 0 8rem;
   }
   
-  /* Убедитесь, что контент не прижимается к краям */
+
   .what_is_chatgpt_section,
   .future_here,
   .jenshina,
@@ -2069,3 +2095,9 @@ section.shag_in_future {
   }
 }
 
+
+@media screen and (max-width: 1280px) {
+  .section {
+    max-width: 100%;
+  }
+}
