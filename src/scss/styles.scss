@@ -1745,7 +1745,7 @@ section.shag_in_future {
   }
 
   body {
-    padding: 0;
+    padding: 0 6rem;
   }
 
   /* Убираем все прокрутки */
@@ -1779,7 +1779,7 @@ section.shag_in_future {
   }
 
   .header {
-    padding: 2rem 0;
+    padding: 2rem 6rem;
   }
 
   .header .header__menu .menu {
@@ -1791,7 +1791,8 @@ section.shag_in_future {
   }
   
   .section {
-    max-width: 90%;
+    max-width: 120rem;
+    width: 100%;
   }
 
   .hero_section__right {
@@ -2067,3 +2068,4 @@ section.shag_in_future {
     padding-top: 1rem; 
   }
 }
+
