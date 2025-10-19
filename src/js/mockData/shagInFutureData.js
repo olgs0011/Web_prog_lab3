@@ -1,35 +1,45 @@
 const shaginfutureData = {
-  header: "Хотите Шагнуть в Будущее <br>Раньше Других?",
+  header: "Хотите Шагнуть в Будущее Раньше Других?",
   requestLink: "#",
   requestButtonText: "Запросить ранний доступ",
-  blockGPT:[
+  blockGPT: [
     {
       imgSrc: './assets/img/GPT-4.svg',
       alt: 'GPT-4',
-      text: `ул. Профессора Поздеева, 13, к.Г,<br> 
-             Пермь, Пермский край, 614013<br>
-             Все права защищены`
+      address: {
+        street: "ул. Профессора Поздеева, 13, к.Г",
+        city: "Пермь",
+        region: "Пермский край",
+        postalCode: "614013"
+      },
+      copyright: "Все права защищены"
     }
   ],
   blocks: [
     {
       title: "Ссылки",
-      text: `<a href="#" class="item__link">Овероны</a><br>
-             <a href="#" class="item__link">Соц.сети</a><br>
-             <a href="#" class="item__link">Счетчики</a><br>
-             <a href="#" class="item__link">Контакты</a>`
+      links: [
+        { text: "Овероны", href: "#" },
+        { text: "Соц.сети", href: "#" },
+        { text: "Счетчики", href: "#" },
+        { text: "Контакты", href: "#" }
+      ]
     },
     {
       title: "Компания",
-      text: `<a href="#" class="item__link">Условия пользования</a><br>
-             <a href="#" class="item__link">Перс. данные</a><br>
-             <a href="#" class="item__link">Контакты</a>`
+      links: [
+        { text: "Условия пользования", href: "#" },
+        { text: "Перс. данные", href: "#" },
+        { text: "Контакты", href: "#" }
+      ]
     },
     {
       title: "Контакты",
-      text: `ул. Профессора<br> Поздеева, 13, к.Г, Пермь<br>
-             +7 (342) 2-198-520<br>
-             info@pstu.ru`
+      contactInfo: {
+        address: "ул. Профессора Поздеева, 13, к.Г, Пермь",
+        phone: "+7 (342) 2-198-520",
+        email: "info@pstu.ru"
+      }
     }
   ]
 };
