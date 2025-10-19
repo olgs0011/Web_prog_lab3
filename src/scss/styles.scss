@@ -1072,7 +1072,6 @@ p {
 }
 
 /*------------------------------/* 
-
 /* Блог + 5 картинок */
 .blog .header_blog {
   font-size: 62px;
@@ -1084,21 +1083,21 @@ p {
 .blog .container_for_block {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
+  align-items: flex-start;
+  gap: 1rem;
   padding-bottom: 7rem;
 }
 
 .blog .container_for_block .large_block {
   display: flex;
   flex-direction: column;
+  flex: 0 0 50%;
 }
 
 .blog .container_for_block .large_block .large_img {
   width: 100%;
   object-fit: cover;
-  width: 26.0644rem; 
-  height: 17.9588rem;
+  height: 20rem; 
   clip-path: polygon(1.5625rem 0, 100% 0, 100% 100%, 0 100%, 0 1.5625rem);
 }
 
@@ -1106,15 +1105,15 @@ p {
   background-color: #042c54;
   width: 100%;
   color: white;
-  width: 26.0644rem; 
-  height: 25.4194rem;
+  height: 21rem; 
+  position: relative;
 }
 
 .blog .container_for_block .large_block .blok_large .data_big {
   font-size: 11.65px;
   margin-bottom: 0.5rem;
   color: #adaaaa;
-  padding: 2.5rem 0 0 1.4rem;
+  padding: 1.5rem 0 0 1.4rem;
   font-family: "Manrope", sans-serif;
 }
 
@@ -1122,22 +1121,27 @@ p {
   font-size: 25.11px;
   font-weight: bold;
   margin-bottom: 1rem;
-  padding: 0 7rem 11rem 1.4rem;
+  padding: 0 1rem 5rem 1.4rem;
   font-family: "ManropeBold", sans-serif;
 }
 
 .blog .container_for_block .large_block .blok_large .ssylka_eto_futare,
 .blog .small_blocks .text_and_img_small .blok_small .ssylka_eto_futare {
   font-size: 12px;
-  padding: 0 0 10rem 1.4rem;
+  padding: 0 0 0 1.4rem;
   color: #adaaaa;
   font-family: "Manrope", sans-serif;
+  position: absolute;
+  bottom: 1.5rem;
 }
 
 .blog .small_blocks {
   display: grid;
-  grid-template-columns: repeat(2, 20.4588rem);
-  grid-gap: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr); 
+  gap: 1rem;
+  flex: 0 0 50%;
+  height: 40rem; 
 }
 
 .blog .small_blocks .text_and_img_small {
@@ -1147,8 +1151,8 @@ p {
 
 .blog .small_blocks .text_and_img_small .photo {
   object-fit: cover;
-  width: 20.4588rem;
-  height: 8.1544rem;
+  width: 100%;
+  height: 10rem; 
   clip-path: polygon(1.5625rem 0, 100% 0, 100% 100%, 0 100%, 0 1.5625rem);
 }
 
@@ -1156,8 +1160,9 @@ p {
   background-color: #042c54;
   padding: 0;
   color: white;
-  width: 20.4588rem;
-  height: 12.0856rem;
+  width: 100%;
+  height: 10rem; 
+  position: relative;
 }
 
 .blog .small_blocks .text_and_img_small .blok_small .data_small {
@@ -1171,9 +1176,11 @@ p {
 .blog .small_blocks .text_and_img_small .blok_small .text_small {
   font-size: 19px;
   font-weight: bold;
-  padding: 0rem 2rem 2.1rem 1.4rem;
+  padding: 0 1rem 2.5rem 1.4rem;
   font-family: "ManropeBold", sans-serif;
 }
+
+
 
 @media screen and (max-width: 1024px) {
   .blog .header_blog {
@@ -1501,6 +1508,8 @@ section.shag_in_future {
   font-family: "Manrope", sans-serif;
   text-align: left;
 }
+
+
 
 .shag_in_future .contakt_info .contaktiki .item__link {
   margin-top: 105px;
