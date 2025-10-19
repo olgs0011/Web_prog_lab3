@@ -1,6 +1,5 @@
 export const blogTemplate = (blogData) => {
     const largeBlockHTML = `
-    <div class="container_for_block">
         <div class="large_block">
             <img class="large_img" src="${blogData.largeBlock.imgSrc}" />
             <div class="blok_large">
@@ -9,7 +8,6 @@ export const blogTemplate = (blogData) => {
                 <a href="${blogData.largeBlock.link}" class="ssylka_eto_futare">Читать полную статью</a>
             </div>
         </div>
-    <div class="container_for_block"> 
     `;
 
     const smallBlocksHTML = blogData.smallBlocks.map(block => `
@@ -25,7 +23,9 @@ export const blogTemplate = (blogData) => {
 
     return `
         <h2 class="header_blog">Многое Происходит, Мы Ведем об Этом Блог.</h2>
-        ${largeBlockHTML}
-        <div class="small_blocks">${smallBlocksHTML}</div>
+        <div class="container_for_block">
+            ${largeBlockHTML}
+            <div class="small_blocks">${smallBlocksHTML}</div>
+        </div>
     `;
 };
