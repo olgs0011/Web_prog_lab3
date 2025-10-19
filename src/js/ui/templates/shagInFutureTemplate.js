@@ -10,23 +10,47 @@ export const shagInFutureTemplate = (shagInFutureData) => {
     </div>
   `;
 
+  const addressText = `
+    ${shagInFutureData.blockGPT[0].address.street}<br>
+    ${shagInFutureData.blockGPT[0].address.city}, ${shagInFutureData.blockGPT[0].address.region}, ${shagInFutureData.blockGPT[0].address.postalCode}<br><br>
+    ${shagInFutureData.blockGPT[0].copyright}
+  `;
+
   const gptIcon = `
     <div class="logo">
       <img class="gpt_icon" src="${shagInFutureData.blockGPT[0].imgSrc}" 
       alt="${shagInFutureData.blockGPT[0].alt}" />
-      <p class="contaktiki">${shagInFutureData.blockGPT[0].text}</p>
+      <p class="contaktiki">${addressText}</p>
     </div>
   `;
 
-  const blocksHTML = shagInFutureData.blocks.map(
-      (block) => `
-      <div class="${block.title === 'Контакты' ? 'get_in_touch' : block.title === 'Компания' ? 'company' : 'links'}">
+  const blocksHTML = shagInFutureData.blocks.map((block) => {
+    let contentHTML = '';
+    
+    if (block.links) {
+      contentHTML = block.links.map(link => 
+        `<a href="${link.href}" class="item__link">${link.text}</a>`
+      ).join('<br>');
+    } else if (block.contactInfo) {
+      contentHTML = `
+        ${block.contactInfo.address}<br>
+        ${block.contactInfo.phone}<br>
+        ${block.contactInfo.email}
+      `;
+    }
+
+    const className = block.title === 'Контакты' ? 'get_in_touch' : 
+                     block.title === 'Компания' ? 'company' : 'links';
+
+    return `
+      <div class="${className}">
         <p class="shtyki_ssilok">${block.title}</p>
         <div class="contakt_info">
-          <p class="contaktiki">${block.text}</p>
+          <p class="contaktiki">${contentHTML}</p>
         </div>
       </div>
-    `).join("");
+    `;
+  }).join("");
 
   return `
     <div class="shag_in_future_header">
